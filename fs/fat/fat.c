@@ -1,0 +1,2 @@
+#include "fat.h"
+mc_status_t fat_validate(const fat_geometry_t*g){if(!g||g->bytes_per_sector<512||g->bytes_per_sector>4096||(g->bytes_per_sector&(g->bytes_per_sector-1))||!g->sectors_per_cluster||!g->reserved_sectors||!g->sectors_per_fat||!g->total_sectors)return MC_EINVAL;return MC_OK;}

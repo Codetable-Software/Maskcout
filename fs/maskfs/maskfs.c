@@ -1,0 +1,2 @@
+#include "maskfs.h"
+mc_status_t maskfs_format(maskfs_superblock_t*s,uint64_t blocks,uint32_t bs){if(!s||blocks<16||bs<512||bs&(bs-1))return MC_EINVAL;s->magic=MASKFS_MAGIC;s->version=1;s->block_size=bs;s->total_blocks=blocks;s->inode_table_block=1;s->data_block=8;return MC_OK;}mc_status_t maskfs_validate(const maskfs_superblock_t*s){return s&&s->magic==MASKFS_MAGIC&&s->version==1&&s->block_size>=512&&s->total_blocks>s->data_block?MC_OK:MC_EINVAL;}

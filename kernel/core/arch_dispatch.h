@@ -1,0 +1,3 @@
+#ifndef MASKCOUT_ARCH_DISPATCH_H
+#define MASKCOUT_ARCH_DISPATCH_H
+#endif

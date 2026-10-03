@@ -1,0 +1,2 @@
+#include "ext4.h"
+mc_status_t ext4_validate(const ext4_geometry_t*g){if(!g||g->block_size<1024||g->block_size>65536||(g->block_size&(g->block_size-1))||!g->blocks_count||!g->inodes_per_group||!g->blocks_per_group)return MC_EINVAL;return MC_OK;}

@@ -1,0 +1,2 @@
+#include "exfat.h"
+mc_status_t exfat_validate(const exfat_geometry_t*g){if(!g||g->sector_shift<9||g->sector_shift>12||g->cluster_shift<g->sector_shift||g->cluster_shift>25||!g->fat_length||!g->cluster_count)return MC_EINVAL;return MC_OK;}
